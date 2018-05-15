@@ -19,7 +19,7 @@ $ composer --v
 ```sh
 $ docker version
 ```
-- Docker Composec
+- Docker Composer
 ```sh
 $ docker-compose version
 ```
