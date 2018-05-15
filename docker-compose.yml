@@ -1,0 +1,35 @@
+version: "2"
+
+services:
+  web:
+    image: nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - "./website:/usr/share/nginx/html"
+      - "./config/default.conf:/etc/nginx/conf.d/default.conf"
+    depends_on:
+      - "fpm"
+
+  fpm:
+    build: 
+      dockerfile: "./docker/php/Dockerfile"
+      context: .
+    depends_on:
+      - "db"
+    volumes:
+      - "./website:/usr/share/nginx/html"
+
+  db:
+    image: mysql:5.7.9
+    environment:
+      - "MYSQL_ROOT_PASSWORD=eduzz"
+      
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    depends_on:
+      - "db"
+    environment:
+      - "PMA_ARBITRARY=1"
