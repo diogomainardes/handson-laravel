@@ -19,7 +19,7 @@ $ composer --v
 ```sh
 $ docker version
 ```
-- Docker Composer
+- Docker Composec
 ```sh
 $ docker-compose version
 ```
@@ -42,11 +42,11 @@ Acesse o diretório clonado utilizando o comando **cd handson-laravel**
 ```sh
 $ cd handson-laravel
 ```
-Baixa a última versão do Laravel (5.6) utilizando o seguinte comando
+Baixa a última versão do Laravel (5.6) utilizando o comando a seguir. Ele irá criar um diretorio *website* no seu diretório. É um processo um pouco demorado, então aproveite e pegue um café.  :)
 ```sh
 $ composer create-project --prefer-dist laravel/laravel website
 ```
-Dentro deste repositório haverá o arquivo do **docker-compose.yml**. Suba seu ambiente. 
+Após concluída a instalação, utilize o arquivo **docker-compose.yml** para subir seu ambiente. Faça o seguinte comando:
 ```sh
 $ docker-compose rm
 $ docker-compose up --build
@@ -61,3 +61,4 @@ Aproveite o HandsOn!
 
 ## Dúvidas
 Em caso de dúvidas ou problemas com relação a instalação do ambiente, contatar pelo Workchat e/ou Whatsapp.
+
