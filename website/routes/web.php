@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/admin/users/{id}/', 'AdminController');
+Route::get('/admin/users/{id}/show', 'AdminController@show')
+    ->name('admin.user.show');
+Route::get('/admin/users/{id}/edit', 'AdminController@edit');
+
+Route::prefix('admin/users')
+    ->middleware(['verifyAge', 'web'])
+    ->group(function(){
+
+    Route::get('{id}/show', 'AdminController@show')
+        ->name('admin.user.show');
+    
+
 });
+
