@@ -6,5 +6,5 @@ RUN apt-get update && apt-get install -y \
         libmcrypt-dev \
         libpng-dev \
     && docker-php-ext-install -j$(nproc) pdo_mysql \
-    && docker-php-ext-install php-mbstring \
-    && docker-php-ext-install php-xml 
+    && docker-php-ext-install php7.2-mbstring \
+    && docker-php-ext-install php7.2-xml 
